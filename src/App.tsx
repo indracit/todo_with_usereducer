@@ -15,7 +15,7 @@ const App = () => {
     setTodos([...todos.slice(0,index),...todos.slice(index+1,todos.length)])
   }
   return (
-    <main onSubmit={handleSubmit} className="">
+    <main onSubmit={handleSubmit} className="main-container">
       <form >
         <input type="text" 
         placeholder="Remind me"
@@ -25,9 +25,10 @@ const App = () => {
         />
         <button type="submit">Add</button>
       </form>
-      {todos.map((d,index)=><p key ={index} >{d}
-      <button onClick={()=>handleDelete(index)}>delete</button></p> 
-      )}
+    
+      {todos.map((d,index)=>  <article className="todos"><p className="todo" key ={index}> {d}
+      <button onClick={()=>handleDelete(index)}>Delete</button></p> 
+      </article>)}
     </main>
   )
 }
