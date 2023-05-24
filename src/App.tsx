@@ -16,9 +16,9 @@ const App = () => {
     setTodo('');
     
   }
-  const handleDelete=(index:number)=>{
+  const handleDelete=(num:number)=>{
     // setTodos([...todos.slice(0,index),...todos.slice(index+1,todos.length)])
-    dispatch({type:'DELETE',index:index})
+    dispatch({type:'DELETE',index:num})
   }
   return (
     <main onSubmit={handleSubmit} className="main-container">
@@ -32,7 +32,7 @@ const App = () => {
         <button type="submit">Add</button>
       </form>
     
-      {todos.map((d,index)=>  <article className="todos"><p className="todo" key ={index}> {d}
+      {todos.map((d,index)=>  <article key ={index} className="todos"><p className="todo"> {d}
       <button onClick={()=>handleDelete(index)}>Delete</button></p> 
       </article>)}
     </main>
